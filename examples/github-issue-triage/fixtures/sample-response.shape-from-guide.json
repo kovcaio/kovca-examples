@@ -1,0 +1,32 @@
+{
+  "request_id": "req_synthetic",
+  "run_id": "run_synthetic",
+  "workflow": {
+    "id": "wf_synthetic",
+    "version": 1
+  },
+  "status": "succeeded",
+  "output": {
+    "opened": true,
+    "category": "technical",
+    "priority": "medium",
+    "requires_human_review": false,
+    "labels": ["bug"],
+    "labeled": true,
+    "comment": "Thanks for opening #1287 (Cart total missing shipping for CA orders). To look into this we still need the steps you took, what you expected to happen, and what happened instead. Reply on this issue with those three.",
+    "commented": true
+  },
+  "steps": [
+    {"id": "input", "status": "succeeded"},
+    {"id": "opened", "status": "succeeded"},
+    {"id": "body", "status": "succeeded"},
+    {"id": "triage", "status": "succeeded"},
+    {"id": "queue", "status": "succeeded"},
+    {"id": "apply", "status": "succeeded"},
+    {"id": "bug", "status": "succeeded"},
+    {"id": "ask", "status": "succeeded"},
+    {"id": "comment", "status": "succeeded"},
+    {"id": "output", "status": "succeeded"}
+  ],
+  "evaluations": 1
+}

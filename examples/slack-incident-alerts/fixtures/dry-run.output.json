@@ -1,0 +1,34 @@
+{
+  "live_call": false,
+  "mode": "dry_run",
+  "notes": [
+    "The template classifies text with Support Triage and, only when priority is high, opens an incident, posts to on-call, and adds a reaction. This program does not choose the priority and does not call Slack.",
+    "The Slack message is untrusted. It is sent as JSON data. This program does not follow instructions written inside it and does not post to Slack.",
+    "KOVCA_WORKFLOW_ID is not set. --live cannot run until it is the published workflow id.",
+    "Use the message ts as the Idempotency-Key. A retry returns the original run instead of opening a second incident, and the duplicate response has no output. Keep the first response. https://kovca.io/docs/idempotency"
+  ],
+  "request": {
+    "body": {
+      "input": {
+        "attachments": [],
+        "blocks": [],
+        "channel": "C08SUPPORT1",
+        "channel_type": "channel",
+        "files": [],
+        "team_id": "T02ACME0001",
+        "text": "Checkout is failing for customers since this morning. They get a 502 after entering card details.",
+        "ts": "1762003954.001200",
+        "user": "U04MARIA01"
+      }
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "Bearer (not set)",
+      "Content-Type": "application/json",
+      "Idempotency-Key": "1762003954.001200"
+    },
+    "method": "POST",
+    "url": "https://kovca.io/api/v1/workflows/wf_<KOVCA_WORKFLOW_ID>/execute"
+  },
+  "skipped": false
+}

@@ -1,0 +1,19 @@
+{
+  "servers": {
+    "kovca": {
+      "type": "http",
+      "url": "https://kovca.io/api/v1/mcp",
+      "headers": {
+        "Authorization": "Bearer ${input:kovca-api-key}"
+      }
+    }
+  },
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "kovca-api-key",
+      "description": "Kovca workspace API key. Run access can list and run. Author access can edit drafts. Publish access can publish and decide approvals.",
+      "password": true
+    }
+  ]
+}

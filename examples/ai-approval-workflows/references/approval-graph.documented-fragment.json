@@ -1,0 +1,62 @@
+{
+  "nodes": [
+    {
+      "id": "input",
+      "ref": "utility:input@1",
+      "config": {
+        "fields": [
+          {"key": "message", "type": "string", "required": true}
+        ]
+      }
+    },
+    {
+      "id": "triage",
+      "ref": "builtin:support/triage@1",
+      "inputs": [
+        {"target": "message", "source": {"ref": "input.message"}}
+      ]
+    },
+    {
+      "id": "needs_person",
+      "ref": "utility:condition@1",
+      "config": {
+        "match": "all",
+        "rules": [
+          {
+            "value": "nodes.triage.output.requires_human_review",
+            "operator": "is_true"
+          }
+        ]
+      }
+    },
+    {
+      "id": "review",
+      "ref": "wait:approval@1",
+      "config": {
+        "title": "Review this ticket",
+        "message": "{{input.message}}\n\nSuggested category: {{nodes.triage.output.category}}",
+        "fields": [
+          {
+            "key": "category",
+            "type": "enum",
+            "values": ["billing", "technical", "account", "product", "other"]
+          }
+        ],
+        "expiresIn": {"amount": 2, "unit": "days"},
+        "notify": {"chat": {"platform": "slack", "connection": "conn_..."}}
+      }
+    },
+    {
+      "id": "route",
+      "ref": "action:http@1",
+      "config": {"...": "..."}
+    }
+  ],
+  "edges": [
+    {"from": "input", "to": "triage"},
+    {"from": "triage", "to": "needs_person"},
+    {"from": "needs_person", "to": "route", "branch": "false"},
+    {"from": "needs_person", "to": "review", "branch": "true"},
+    {"from": "review", "to": "route", "branch": "approved"}
+  ]
+}

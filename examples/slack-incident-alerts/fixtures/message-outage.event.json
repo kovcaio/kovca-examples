@@ -1,0 +1,16 @@
+{
+  "type": "event_callback",
+  "team_id": "T02ACME0001",
+  "event": {
+    "type": "message",
+    "channel": "C08SUPPORT1",
+    "channel_type": "channel",
+    "user": "U04MARIA01",
+    "text": "Checkout is failing for customers since this morning. They get a 502 after entering card details.",
+    "ts": "1762003954.001200",
+    "team_id": "T02ACME0001",
+    "attachments": [],
+    "blocks": [],
+    "files": []
+  }
+}
