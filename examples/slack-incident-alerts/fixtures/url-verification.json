@@ -1,0 +1,5 @@
+{
+  "type": "url_verification",
+  "challenge": "synthetic_challenge_token",
+  "token": "not-a-verification-token"
+}

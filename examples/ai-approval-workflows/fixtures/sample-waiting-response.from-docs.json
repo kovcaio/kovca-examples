@@ -1,0 +1,16 @@
+{
+  "request_id": "req_synthetic",
+  "run_id": "run_synthetic",
+  "status": "waiting",
+  "waits": 1,
+  "callbacks": [
+    {
+      "step_id": "payment",
+      "callback_id": "cb_synthetic",
+      "url": "https://kovca.io/api/v1/resume/kvb_synthetic",
+      "expires_at": "2026-11-12T18:00:00.000Z"
+    }
+  ],
+  "evaluations": 1,
+  "credits": 6
+}

@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "kovca": {
+      "url": "https://kovca.io/api/v1/mcp",
+      "headers": {
+        "Authorization": "Bearer ${env:KOVCA_API_KEY}"
+      }
+    }
+  }
+}

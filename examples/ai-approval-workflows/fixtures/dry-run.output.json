@@ -1,0 +1,25 @@
+{
+  "live_call": false,
+  "mode": "dry_run",
+  "notes": [
+    "A published workflow with wait:approval@1 returns 202 and status waiting. The approval link is not in that response. A person answers from the link or the Approvals inbox unless the step allows API decisions.",
+    "The message is untrusted case text. It is sent as JSON data. This program does not treat it as instructions.",
+    "KOVCA_WORKFLOW_ID is not set.",
+    "A retry with this same key and body returns the original run and does not start another one. The duplicate response omits the output. https://kovca.io/docs/idempotency"
+  ],
+  "request": {
+    "body": {
+      "input": {
+        "message": "Synthetic customer says order 1001 never arrived and asks for a refund. This is not a real customer, order, or payment."
+      }
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "Bearer (not set)",
+      "Content-Type": "application/json",
+      "Idempotency-Key": "refund-1001"
+    },
+    "method": "POST",
+    "url": "https://kovca.io/api/v1/workflows/wf_<KOVCA_WORKFLOW_ID>/execute"
+  }
+}

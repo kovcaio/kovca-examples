@@ -1,0 +1,12 @@
+{
+  "type": "event_callback",
+  "team_id": "T02ACME0001",
+  "event": {
+    "type": "message",
+    "channel": "C08SUPPORT1",
+    "bot_id": "B_SYNTHETIC",
+    "text": "High-priority incident INC-1042 opened: synthetic bot echo.",
+    "ts": "1762003999.000100",
+    "user": "U_BOT"
+  }
+}

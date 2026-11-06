@@ -1,0 +1,29 @@
+{
+  "request_id": "req_synthetic",
+  "run_id": "run_synthetic",
+  "workflow": {
+    "id": "wf_synthetic",
+    "version": 1
+  },
+  "status": "succeeded",
+  "output": {
+    "escalated": true,
+    "priority": "high",
+    "category": "technical",
+    "incident_id": "INC-1042",
+    "paged": true,
+    "reacted": true
+  },
+  "steps": [
+    {"id": "input", "status": "succeeded"},
+    {"id": "triage", "status": "succeeded"},
+    {"id": "urgent", "status": "succeeded"},
+    {"id": "ticket", "status": "succeeded", "http_status": 201},
+    {"id": "alert", "status": "succeeded"},
+    {"id": "page", "status": "succeeded"},
+    {"id": "react", "status": "succeeded"},
+    {"id": "merge", "status": "succeeded"},
+    {"id": "output", "status": "succeeded"}
+  ],
+  "evaluations": 1
+}

@@ -1,0 +1,33 @@
+{
+  "live_call": false,
+  "mode": "dry_run",
+  "notes": [
+    "action is opened. The template classifies the issue, maps the category to one label, and comments only when Support Triage returns category technical. This program does not choose the category.",
+    "Issue title and description are untrusted. They are sent as JSON data. This program does not follow instructions written inside them.",
+    "KOVCA_WORKFLOW_ID is not set. --live cannot run until it is the published workflow id.",
+    "A retry of this same body with the same Idempotency-Key returns the original run and does not label or comment again. Kovca does not return the output on that duplicate, so keep the first response. https://kovca.io/docs/idempotency"
+  ],
+  "request": {
+    "body": {
+      "input": {
+        "action": "opened",
+        "created_at": "2026-11-02T14:03:00Z",
+        "created_by": "maria-chen",
+        "description": "Since the 1.42 release, the cart total does not include the shipping fee for orders to Canada.",
+        "issue_id": 3092845511,
+        "number": 1287,
+        "title": "Cart total missing shipping for CA orders",
+        "url": "https://github.com/acme/storefront/issues/1287"
+      }
+    },
+    "headers": {
+      "Accept": "application/json",
+      "Authorization": "Bearer (not set)",
+      "Content-Type": "application/json",
+      "Idempotency-Key": "3092845511"
+    },
+    "method": "POST",
+    "url": "https://kovca.io/api/v1/workflows/wf_<KOVCA_WORKFLOW_ID>/execute"
+  },
+  "skipped": false
+}
